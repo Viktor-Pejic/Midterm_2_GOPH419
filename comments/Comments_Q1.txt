@@ -1,0 +1,24 @@
+
+part a.)
+
+    delta_xk = (xk+1 − xk) represents the intervals between consecutive years.
+
+    f[xk, xk+1] represents the slope between consecutive years.
+
+part b.)
+
+    For the system to converge using the Gauss-Seidel method, the coefficient matrix must be
+    a square matrix of size n x n. the right-hand-side vector must be the same dimensions as
+    A meaning it must have the same number of rows, (n,:) or (n x m). The initial guess for
+    the solution must also be the same dimension as A, (n,:) or (n x m). The system created in a.)
+    does satisfy these requirements. The system is guaranteed a converging solution if the
+    matrix A is strictly diagonally dominant and is symmetric (A = A^T). The system could
+    possibly converge if the previous condition isn't met but is not guaranteed if
+    the solutions over multiple iterations starts decreasing the convergence is possible.
+
+part e.)
+
+    The data point in 2015 seems to deviate strongly off the interpolated function compared to the
+    other points. Due to this, the interpolated function may not be accurately representing
+    the CO2 concentration in March 2015.
+
