@@ -51,6 +51,10 @@ def main():
 
     spline = cubic_spline(x, xd, yd)
 
+    target_x = 2015.25
+    interpolated_value = cubic_spline([target_x], xd, yd)[0]
+    print(f"\nInterpolated value at {target_x}: {interpolated_value:.2f}\n")
+
     plt.plot(x, spline)
     plt.scatter(xd, yd, color='black')
     plt.xlabel('Years')
