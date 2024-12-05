@@ -57,7 +57,7 @@ def main():
     plt.ylabel('CO2 Concentration (mean)')
     plt.title('CO2 Concentration Trend from 2010-2020', fontweight='bold')
     #plt.show()
-    plt.savefig("C:/Users/Viktor/repos/Midterm_2_GOPH419/figures/CO2_spline_interpolation_2010-2020.png")
+    #plt.savefig("C:/Users/Viktor/repos/Midterm_2_GOPH419/figures/CO2_spline_interpolation_2010-2020.png")
 
 if __name__ == '__main__':
     main()
