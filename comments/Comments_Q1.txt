@@ -16,6 +16,10 @@ part b.)
     possibly converge if the previous condition isn't met but is not guaranteed if
     the solutions over multiple iterations starts decreasing the convergence is possible.
 
+part d.)
+
+    Interpolated value at the point 2015.25: 401.81
+
 part e.)
 
     The data point in 2015 seems to deviate strongly off the interpolated function compared to the
