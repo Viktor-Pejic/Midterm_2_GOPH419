@@ -35,14 +35,22 @@ def GaussSeidel(A, xd, yd, x0=None, tol=1e-8, max_iter=100):
 
         # Check for convergence
         if np.max(np.abs(x - x_old)) / np.max(np.abs(x)) < tol:
-            return x
+            expected_sol = np.linalg.solve(A, rhs)
+            for i in range(len(x)):
+                diff = abs(x[i] - expected_sol[i])
+                if diff <= 1e-03:
+                    print("\nGauss-Seidel solution satisfies the original equation\n")
+                    return x
+                else:
+                    print("\nGauss-Seidel solution does not satisfy the original equation\n")
+
 
     # If max_iter reached without convergence
     raise RuntimeWarning(f"Solution did not converge within {max_iter} iterations.")
 
 def main():
     CO2 = np.loadtxt("C:/Users/Viktor/repos/Midterm_2_GOPH419/data/CO2_data.txt", 'float')
-    xd = np.array(CO2[51:62, 0], dtype='float')  # Year on the x-axis
+    xd = np.array(CO2[51:62, 0], dtype='float')  # Year 2010-2020 on the x-axis
     yd = np.array(CO2[51:62, 1], dtype='float')  # CO2 concentration on the y-axis
 
     A = coeffMatrix()
@@ -50,6 +58,7 @@ def main():
     solution = GaussSeidel(A, xd, yd, x0=None, tol=1e-8, max_iter=100)
 
     print(solution)
+
 
 if __name__ == "__main__":
     main()
