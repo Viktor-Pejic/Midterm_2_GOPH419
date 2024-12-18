@@ -1,9 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-CO2 = np.loadtxt("C:/Users/Viktor/repos/Midterm_2_GOPH419/data/CO2_data.txt", 'float')
-xd = np.array(CO2[:, 0], dtype='float')  # Year 2010-2020 on the x-axis
-yd = np.array(CO2[:, 1], dtype='float')  # CO2 concentration on the y-axis
+
 
 def second_order(xd, yd):
     h = xd[1] - xd[0]
@@ -29,7 +27,11 @@ def mean_fourth_order(x):
     return mean
 
 
-def main(xd, yd):
+def main():
+    CO2 = np.loadtxt("C:/Users/Viktor/repos/Midterm_2_GOPH419/data/CO2_data.txt", 'float')
+    xd = np.array(CO2[:, 0], dtype='float')  # Year 2010-2020 on the x-axis
+    yd = np.array(CO2[:, 1], dtype='float')  # CO2 concentration on the y-axis
+
     order_2 = second_order(xd, yd)
     order_4 = fourth_order(xd, yd)
 
@@ -44,10 +46,10 @@ def main(xd, yd):
     plt.title('CO2 Concentration and its Second Derivative')
     plt.legend()
     plt.grid()
-    plt.savefig("C:/Users/Viktor/repos/Midterm_2_GOPH419/figures/Second derivative 2nd and 4th order 1959-2022.png")
+    #plt.savefig("C:/Users/Viktor/repos/Midterm_2_GOPH419/figures/Second derivative 2nd and 4th order 1959-2022.png")
 
 if __name__ == '__main__':
-    main(xd, yd)
+    main()
 
 
 

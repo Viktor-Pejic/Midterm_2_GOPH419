@@ -1,9 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-CO2 = np.loadtxt("C:/Users/Viktor/repos/Midterm_2_GOPH419/data/CO2_data.txt", 'float')
-xd = np.array(CO2[:, 0], dtype='float')  # Year 2010-2020 on the x-axis
-yd = np.array(CO2[:, 1], dtype='float')  # CO2 concentration on the y-axis
+
 
 def second_order(xd, yd):
     h = xd[1] - xd[0]
@@ -21,7 +19,11 @@ def fourth_order(xd, yd):
         f_prime_4[i] = (-yd[i + 2] + 8*yd[i + 1] - 8*yd[i - 1] + yd[i - 2]) / 12*h
     return f_prime_4
 
-def main(xd, yd):
+def main():
+    CO2 = np.loadtxt("C:/Users/Viktor/repos/Midterm_2_GOPH419/data/CO2_data.txt", 'float')
+    xd = np.array(CO2[:, 0], dtype='float')  # Year 2010-2020 on the x-axis
+    yd = np.array(CO2[:, 1], dtype='float')  # CO2 concentration on the y-axis
+
     order_2 = second_order(xd, yd)
     order_4 =  fourth_order(xd, yd)
 
@@ -36,7 +38,7 @@ def main(xd, yd):
     #plt.savefig("C:/Users/Viktor/repos/Midterm_2_GOPH419/figures/First derivative 2nd and 4th order 1959-2022.png")
 
 if __name__ == '__main__':
-    main(xd, yd)
+    main()
 
 
 
