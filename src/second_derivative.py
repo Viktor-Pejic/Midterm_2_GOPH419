@@ -29,7 +29,7 @@ def main(xd, yd):
     plt.plot(xd, order_2, label='second_order')
     plt.plot(xd, order_4, label='fourth_order')
     plt.xlabel('Year')
-    plt.ylabel('CO2 Concentration / Rate of Change (ppm/yr)')
+    plt.ylabel('CO2 Concentration / Rate of Change (ppm/yr^2)')
     plt.title('CO2 Concentration and its First Derivative')
     plt.legend()
     plt.grid()
