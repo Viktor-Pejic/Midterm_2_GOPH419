@@ -21,10 +21,21 @@ def fourth_order(xd, yd):
         f_2prime_4[i] = (-yd[i + 2] + 16*yd[i + 1] - 30*yd[i] + 16*yd[i - 1] - yd[i - 2]) / (12*(h**2))
     return f_2prime_4
 
+def mean_fourth_order(x):
+    sum = 0
+    for i in range(len(x)):
+        sum += x[i]
+    mean = sum/len(x)
+    return mean
+
+
 def main(xd, yd):
     order_2 = second_order(xd, yd)
     order_4 = fourth_order(xd, yd)
 
+    mean = mean_fourth_order(order_4[2:-2])
+
+    print(f"Mean value for fourth order second derivative = {mean:.8f}")
 
     plt.plot(xd, order_2, label='second_order')
     plt.plot(xd, order_4, label='fourth_order')
