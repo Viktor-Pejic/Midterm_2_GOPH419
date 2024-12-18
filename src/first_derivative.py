@@ -33,7 +33,7 @@ def main(xd, yd):
     plt.title('CO2 Concentration and its First Derivative')
     plt.legend()
     plt.grid()
-    plt.savefig("C:/Users/Viktor/repos/Midterm_2_GOPH419/figures/First derivative 2nd and 4th order 1959-2022.png")
+    #plt.savefig("C:/Users/Viktor/repos/Midterm_2_GOPH419/figures/First derivative 2nd and 4th order 1959-2022.png")
 
 if __name__ == '__main__':
     main(xd, yd)
