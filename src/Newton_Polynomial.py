@@ -57,20 +57,24 @@ def find_sufficient_degree(xd, yd, target_x, tolerance=0.0005):
     return current_value, degree  # Return the highest degree if tolerance is not met
 
 
+def main():
 
-CO2 = np.loadtxt("C:/Users/Viktor/repos/Midterm_2_GOPH419/data/CO2_data.txt", 'float')
-xd = np.array(CO2[51:62, 0], dtype='float')  # Year 2010-2020 on the x-axis
-yd = np.array(CO2[51:62, 1], dtype='float')  # CO2 concentration on the y-axis
-
-
-target_x = 2015.25
+    CO2 = np.loadtxt("C:/Users/Viktor/repos/Midterm_2_GOPH419/data/CO2_data.txt", 'float')
+    xd = np.array(CO2[51:62, 0], dtype='float')  # Year 2010-2020 on the x-axis
+    yd = np.array(CO2[51:62, 1], dtype='float')  # CO2 concentration on the y-axis
 
 
-estimated_value, order = estimate_concentration(xd, yd, target_x)
+    target_x = 2015.25
 
-print(f"Estimated CO2 concentration for March 2015: {estimated_value:.4f}")
-print(f"Polynomial order required: {order}\n")
 
-result, degree = find_sufficient_degree(xd, yd, target_x)
-print(f"Estimated CO2 concentration up to 6 significant digits: {result:.3f}")
-print(f"Required polynomial degree: {degree}")
+    estimated_value, order = estimate_concentration(xd, yd, target_x)
+
+    print(f"Estimated CO2 concentration for March 2015: {estimated_value:.4f}")
+    print(f"Polynomial order required: {order}\n")
+
+    result, degree = find_sufficient_degree(xd, yd, target_x)
+    print(f"Estimated CO2 concentration up to 6 significant digits: {result:.3f}")
+    print(f"Required polynomial degree: {degree}")
+
+if __name__ == '__main__':
+    main()
