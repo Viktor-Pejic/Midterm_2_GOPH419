@@ -30,7 +30,7 @@ def main(xd, yd):
     plt.plot(xd, order_4, label='fourth_order')
     plt.xlabel('Year')
     plt.ylabel('CO2 Concentration / Rate of Change (ppm/yr^2)')
-    plt.title('CO2 Concentration and its First Derivative')
+    plt.title('CO2 Concentration and its Second Derivative')
     plt.legend()
     plt.grid()
     plt.savefig("C:/Users/Viktor/repos/Midterm_2_GOPH419/figures/Second derivative 2nd and 4th order 1959-2022.png")
